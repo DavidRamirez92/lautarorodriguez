@@ -1,8 +1,12 @@
+reiquire("dotenv").config({
+  path:`.env`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Lautaro Rodriguez Cineasta`,
     description: `En esta pagina se pueden visualizar mis trabajos de Cine y Audiovisuales en general`,
-    author: `David Ramirez`,
+    author: `@David Ramirez`,
   },
   plugins: [
     `gatsby-plugin-emotion`,
@@ -20,7 +24,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://localhost:1337`,
+        apiURL: process.env.API_URL || `http://localhost:1337`,
         queryLimit: 1000, // Defaults to 100
         collectionTypes: [`paginas`,`videos`],
       },
