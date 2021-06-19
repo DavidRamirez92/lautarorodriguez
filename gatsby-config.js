@@ -2,6 +2,7 @@ require("dotenv").config({
   path:`.env`,
 });
 
+
 module.exports = {
   siteMetadata: {
     title: `Lautaro Rodriguez Cineasta`,
